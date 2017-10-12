@@ -1,0 +1,32 @@
+
+	Space Raiders
+	(Think battleship in space)
+	You have an interconnected set of solar systems on the screen. The purpose of the game is to find the other player and destroy their home base.
+	
+	1. Each player sets their base on the screen
+	2. Each player chooses 3 starting troops from a list of options
+		a. scout - high rate of travel, average sight distance
+		b. depth charge - sends out an emp blast that if detonated within the solar system of someone's troop or base disables that object for 1 round and alerts the sender of what unit was there
+		c. destroyer - a slower battle unit with less travel distance but increased fire power
+		d. swarm - limited number of moves per swarm but they are able to divide their numbers in half each round and perform a binary search of solar systems for that round
+		e. scan - allows the user to select any 3 neigboring solar systems and get feedback as to if there is any enemey presence within. They do not know what vessel or objects are within
+		f.
+		g.
+	
+	
+	
+	REQUIRED TO PLAY
+	
+	1. Div displays of solar systems. Must be selectable throughout the game.
+	2. Selection menu for troops in beginning and throughout the game.
+	3. Connected gameplay for 2 or more players.
+	4. 
+	
+	
+	BIG DECISIONS TO MAKE
+	1. Canvas versus Divs
+		a. canvas is better for animation and movement over time / dynamically
+		b. divs are easier to link .click events to
+		c. divs are easier to programatically generate and control
+		
+	
