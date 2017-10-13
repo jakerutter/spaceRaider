@@ -1,3 +1,14 @@
+//play menu confirm sound
+function menuConfirm(){
+    document.getElementById("menuConfirm").play();
+}
+
+//click sound function
+function clickSound(){
+document.addEventListener("click", function(){
+    document.getElementById("clickSound").play();
+});
+}
 
 //canvas that is drawn on body.onload and sits in the background during menu selections
 function background() {
@@ -46,6 +57,7 @@ function drawing() {
 
 // //First menu that appears when start button selected
 function welcomeModal() {
+   
     document.getElementById('startButton').classList.add('hidden');
     document.getElementById('welcomeModal').classList.remove('hidden');
     $("#welcomeModal").modal();
@@ -73,6 +85,7 @@ function hideWelcomeModal() {
     document.getElementById('simplemodal-overlay').classList.add('behind');
     document.getElementById('simplemodal-container').classList.add('behind');
     document.getElementById('menuModal').classList.remove('hidden');
+    menuConfirm();
     $("#menuModal").modal();
     }else {
         welcomeModalAlert.innerHTML = "You must make a selection before proceeding.";
@@ -111,6 +124,7 @@ function hideMenuModal() {
     document.getElementById('menuModal').classList.add('behind');
     document.getElementById('simplemodal-overlay').classList.add('behind');
     document.getElementById('simplemodal-container').classList.add('behind');   
+    menuConfirm();
     var gameSize = currentSize.innerHTML;
     createGame(gameSize);
     } else {
