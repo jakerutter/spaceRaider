@@ -1,0 +1,3 @@
+List of images included in v.1
+
+ -scout.png
