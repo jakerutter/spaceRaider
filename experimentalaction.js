@@ -11,8 +11,10 @@ function drawing() {
 	var xMax = c.width = window.screen.availWidth;
 	var yMax = c.height = window.screen.availHeight;
     var rotateBy = 0;
-	var hmTimes = Math.round(xMax + yMax);	
-    var id = setInterval(frame, 500);
+    var hmTimes = Math.round(xMax + yMax);
+    
+    //uncomment this timer to make the background grow more densly starred
+    // var id = setInterval(frame, 500);
     function frame(){
         if (rotateBy > 10){
             clearInterval(id);
@@ -38,8 +40,8 @@ function drawing() {
     rotateBy += .01;
     }
 }
-    
-     
+//remove this function call if you decide to turn the timer back on
+   frame();    
 }
 
 // //First menu that appears when start button selected
@@ -70,7 +72,6 @@ function hideWelcomeModal() {
     document.getElementById('welcomeModal').classList.add('behind');
     document.getElementById('simplemodal-overlay').classList.add('behind');
     document.getElementById('simplemodal-container').classList.add('behind');
-    
     document.getElementById('menuModal').classList.remove('hidden');
     $("#menuModal").modal();
     }else {
@@ -85,31 +86,34 @@ function menuModal() {
     document.getElementById('menuModal').classList.remove('hidden');
     $("#menuModal").modal();
 
-    var troops = "";
-    loop();
+    var troops = [];
 
-    function loop(){
-        
-        if ($("input[name='troops']:checked").length > 0) {
-            troops = $("input[name='troops']:checked").val();
-        }
-        else{
-            setTimeout(loop, 1000);   
-        }
-        troopSelection.innerHTML = troops;
-    }
 }
 
+function checkTroopSelection() {
+    troops = $('input:checkbox:checked.checkboxes').map(function () {
+        return this.value;
+      }).get();
+      if (troops.length > 0){
+        troopSelection.innerHTML = troops;
+    }
+
+    if (troopSelection.innerHTML != ""){
+        hideMenuModal();
+    }else{
+        menuModalAlert.innerHTML = "You must make a selection before proceeding.";
+        menuModal();
+    }
+}
 function hideMenuModal() {
     if (troopSelection.innerHTML != ""){
     document.getElementById('menuModal').classList.add('hidden');
     document.getElementById('menuModal').classList.add('behind');
     document.getElementById('simplemodal-overlay').classList.add('behind');
-    document.getElementById('simplemodal-container').classList.add('behind');
+    document.getElementById('simplemodal-container').classList.add('behind');   
     var gameSize = currentSize.innerHTML;
     createGame(gameSize);
     } else {
-        menuModalAlert.innerHTML = "You must make a selection before proceeding.";
         menuModal();
     }
 }

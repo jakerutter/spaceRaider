@@ -31,28 +31,28 @@
 </div>
 
 <div id="menuModal" class="modal center hidden"><h1>Game Setup</h1>
-    <div><h3>Choose your Troops [you get 3]</h3></div>
+    <div><h3>Choose your Troops [you start with 3]</h3></div>
         <form id="troopCheckboxes" action="" class="troopCheckBox">
-            <input id="scout" type="checkbox" name="troops" value="scout">
+            <input id="troop1" type="checkbox" name="troops" value="scout" class="checkboxes">
                 <span title="quick travelling unit that searches planet by planet">scout</span><br>
-            <input id="depthCharge" type="checkbox" name="troops" value="depth charge">
+            <input id="troop2" type="checkbox" name="troops" value="depth charge" class="checkboxes">
                 <span title="powerful explosive that disables a solar system for 1 turn and returns info on any oponent units within">depth charge</span><br>
-            <input id="destroyer" type="checkbox" name="troops" value="destroyer">
+            <input id="destroyer" type="checkbox" name="troops" value="destroyer" class="checkboxes">
                 <span title="slow and powerful unit that attacks one planet at a time">destroyer</span><br>
-            <input id="swarm" type="checkbox" name="troops" value="swarm">
+            <input id="swarm" type="checkbox" name="troops" value="swarm" class="checkboxes">
                 <span title="a search unit that divides itself in half and searches planets in a binary method. has limited search range">swarm</span><br>
-            <input id="scan" type="checkbox" name="troops" value="scan">
+            <input id="scan" type="checkbox" name="troops" value="scan" class="checkboxes">
                 <span title="offers a scan of a solar system and two of its closest neighbors. returns whether enemy units are present no other information">scan</span><br>
-            <input id="tbd" type="checkbox" name="troops" value="tbd">
+            <input id="tbd" type="checkbox" name="troops" value="tbd" class="checkboxes">
                 <span title="quick travelling unit that searches planet by planet">tbd</span><br>
-            <input id="tbd" type="checkbox" name="troops" value="tbd">
+            <input id="tbd" type="checkbox" name="troops" value="tbd" class="checkboxes">
                 <span title="quick travelling unit that searches planet by planet">tbd</span><br>
-            <input id="tbd" type="checkbox" name="troops" value="tbd">
-                <span title="quick travelling unit that searches planet by planet">tbd</span><br></br>
+            <input id="tbd" type="checkbox" name="troops" value="tbd" class="checkboxes">
+                <span title="quick travelling unit that searches planet by planet">tbd</span><br>
         </form>
           <div id="menuModalAlert">...................</div>
         <div><h4>Hover over a troop's name to get more details on them.</h4></div>
-        <button id="confirmMenu" onclick="hideMenuModal();">Advance</button><br>
+        <button id="confirmMenu" onclick="checkTroopSelection();">Advance</button><br>
 </div>
 
 
