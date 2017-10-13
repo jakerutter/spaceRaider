@@ -1,0 +1,3 @@
+List of Sounds Included in v.1
+  - clickSound.mp3
+  - menuConfirm.mp3
