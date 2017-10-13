@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script src="jquery-3.1.1.js"></script>
+<script src="jquery.simplemodal-1.4.4.js"></script>
+<script type ="text/javascript" src="space.js"></script>
+<script type ="text/javascript" src="experimentalaction.js"></script>
+<audio type="audio" id="clickSound" src="assets/sounds/click.mp3"></audio>
+<audio type="audio" id="menuConfirm" src="assets/sounds/menuConfirm.mp3"></audio>
+<title>Space Raiders</title>
+</head>
+
+<body style= "text-align: center"; onload="background();">
+
+    <canvas id="firstCanvas" class="firstCanvas"></canvas>
+
+    <button id=startButton class="subNavSelections" onclick="welcomeModal();">START</button>
+<h1 class= "headtitle">Space Raiders</h1>
+
+<div id="welcomeModal" class="modal center hidden"><h1>Game Setup</h1>
+    <div><h3>Choose the size of the Galaxy</h3></div>
+        <form action="" class="gameSizeRadio">
+            <input type="radio" name="gameSize" value="None">Random<br>
+            <input type="radio" name="gameSize" value="10">10 solar systems<br>
+            <input type="radio" name="gameSize" value="20">20 solar systems<br>
+            <input type="radio" name="gameSize" value="50">50 solar systems<br>
+            <input type="radio" name="gameSize" value="100">100 solar systems<br><br>
+          </form>
+          <div id="welcomeModalAlert">...................</div>
+        <div><h4>The objective is to find and destroy the other player's home world.</h4></div>
+        <button id="confirmWelcome" onclick="hideWelcomeModal();">Advance</button><br>
+</div>
+
+<div id="menuModal" class="modal center hidden"><h1>Game Setup</h1>
+    <div><h3>Choose your Troops [you start with 3]</h3></div>
+        <form id="troopCheckboxes" action="" class="troopCheckBox">
+            <input id="troop1" type="checkbox" name="troops" value="scout" class="checkboxes">
+                <span title="quick travelling unit that searches planet by planet">scout</span><br>
+            <input id="troop2" type="checkbox" name="troops" value="depth charge" class="checkboxes">
+                <span title="powerful explosive that disables a solar system for 1 turn and returns info on any oponent units within">depth charge</span><br>
+            <input id="destroyer" type="checkbox" name="troops" value="destroyer" class="checkboxes">
+                <span title="slow and powerful unit that attacks one planet at a time">destroyer</span><br>
+            <input id="swarm" type="checkbox" name="troops" value="swarm" class="checkboxes">
+                <span title="a search unit that divides itself in half and searches planets in a binary method. has limited search range">swarm</span><br>
+            <input id="scan" type="checkbox" name="troops" value="scan" class="checkboxes">
+                <span title="offers a scan of a solar system and two of its closest neighbors. returns whether enemy units are present no other information">scan</span><br>
+            <input id="tbd" type="checkbox" name="troops" value="tbd" class="checkboxes">
+                <span title="quick travelling unit that searches planet by planet">tbd</span><br>
+            <input id="tbd" type="checkbox" name="troops" value="tbd" class="checkboxes">
+                <span title="quick travelling unit that searches planet by planet">tbd</span><br>
+            <input id="tbd" type="checkbox" name="troops" value="tbd" class="checkboxes">
+                <span title="quick travelling unit that searches planet by planet">tbd</span><br>
+        </form>
+          <div id="menuModalAlert">...................</div>
+        <div><h4>Hover over a troop's name to get more details on them.</h4></div>
+        <button id="confirmMenu" onclick="checkTroopSelection();">Advance</button><br>
+</div>
+
+
+<div id="currentSize" class="hidden"></div>
+<div id="troopSelection" class="hidden"></div>
+</body>
+</html>
