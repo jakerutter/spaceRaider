@@ -1,6 +1,5 @@
 body {
     background-color: white;
-     /*background-color: black;*/
 }
 
 #firstCanvas {
@@ -19,7 +18,7 @@ body {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-color: darkblue;
+    background-color: #ffffff;
 }
 
 .maze-wrapper {
