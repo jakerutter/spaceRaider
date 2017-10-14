@@ -4,20 +4,20 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <script src="jquery-3.1.1.js"></script>
 <script src="jquery.simplemodal-1.4.4.js"></script>
-<script type ="text/javascript" src="space.js"></script>
 <script type ="text/javascript" src="experimentalaction.js"></script>
+<script type ="text/javascript" src="space.js"></script>
 <audio type="audio" id="clickSound" src="assets/sounds/click.mp3"></audio>
 <audio type="audio" id="menuConfirm" src="assets/sounds/menuConfirm.mp3"></audio>
 <title>Space Raiders</title>
 </head>
 
-<body style= "text-align: center"; onload="background();">
-
+<body onload="background()">
+        
     <canvas id="firstCanvas" class="firstCanvas"></canvas>
-
-    <button id=startButton class="subNavSelections" onclick="welcomeModal();">START</button>
-<h1 class= "headtitle">Space Raiders</h1>
-
+<div id="header">
+    <button id=startButton class="subNavSelections" onclick="welcomeModal()">START</button>
+<h1 class="headtitle">Space Raiders</h1>
+</div>
 <div id="welcomeModal" class="modal center hidden"><h1>Game Setup</h1>
     <div><h3>Choose the size of the Galaxy</h3></div>
         <form action="" class="gameSizeRadio">
@@ -29,7 +29,7 @@
           </form>
           <div id="welcomeModalAlert">...................</div>
         <div><h4>The objective is to find and destroy the other player's home world.</h4></div>
-        <button id="confirmWelcome" onclick="hideWelcomeModal();">Advance</button><br>
+        <button id="confirmWelcome" onclick="hideWelcomeModal()">Advance</button><br>
 </div>
 
 <div id="menuModal" class="modal center hidden"><h1>Game Setup</h1>
@@ -54,11 +54,37 @@
         </form>
           <div id="menuModalAlert">...................</div>
         <div><h4>Hover over a troop's name to get more details on them.</h4></div>
-        <button id="confirmMenu" onclick="checkTroopSelection();">Advance</button><br>
+        <button id="confirmMenu" onclick="checkTroopSelection()">Advance</button><br>
 </div>
-
+<div id="myProgress1" class="center hidden" ><div id="myBar1" ></div></div>
+<div id="myProgress2" class="center hidden" ><div id="myBar2" ></div></div>
+<div id="myProgress3" class="center hidden" ><div id="myBar3" ></div></div>
+<div id="myProgress4" class="center hidden" ><div id="myBar4" ></div></div>
+<div id="myProgress5" class="center hidden" ><div id="myBar5" ></div></div>
 
 <div id="currentSize" class="hidden"></div>
 <div id="troopSelection" class="hidden"></div>
 </body>
 </html>
+<!-- 
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="experimentalaction.js"></script>
+<style>
+
+</style>
+<body>
+
+<h1>JavaScript Progress Bar</h1>
+
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+
+<br>
+<button onclick="move()">Click Me</button> 
+
+
+</body>
+</html> -->

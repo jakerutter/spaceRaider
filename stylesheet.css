@@ -2,6 +2,9 @@ body {
     background-color: white;
 }
 
+#header{
+    text-align: center;
+}
 #firstCanvas {
     z-index: -1;
     background: -webkit-linear-gradient(#00111e 30%, #033d5e);
@@ -92,6 +95,7 @@ body {
 }
 
 .modal {
+    text-align: center;
     width: 450px;
     height: 400px;
     background-color: rgb(99, 176, 238);
@@ -136,3 +140,96 @@ body {
     z-index: -10 !important;
 }
 
+.front {
+    z-index: 2000;
+}
+
+#myProgress1 {
+    height: 30px;
+    width: 50%;
+    background-color: #ddd;
+  }
+  
+  #myBar1 {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.5em;
+    width: 1%;
+    height: 30px;
+    background: -webkit-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -moz-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -o-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: linear-gradient(#d9e2e9 30%, #7fc7ee);
+  }
+
+  #myProgress2 {
+    height: 30px;
+    width: 50%;
+    background-color: #ddd;
+  }
+  
+  #myBar2 {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.5em;
+    width: 1%;
+    height: 30px;
+    background: -webkit-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -moz-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -o-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: linear-gradient(#d9e2e9 30%, #7fc7ee);
+  }
+
+  #myProgress3 {
+    height: 30px;
+    width: 50%;
+    background-color: #ddd;
+  }
+  
+  #myBar3 {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.5em;
+    width: 1%;
+    height: 30px;
+    background: -webkit-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -moz-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -o-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: linear-gradient(#d9e2e9 30%, #7fc7ee);
+  }
+
+  #myProgress4 {
+    height: 30px;
+    width: 50%;
+    background-color: #ddd;
+  }
+  
+  #myBar4 {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.5em;
+    width: 1%;
+    height: 30px;
+    background: -webkit-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -moz-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -o-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: linear-gradient(#d9e2e9 30%, #7fc7ee);
+  }
+
+  #myProgress5 {
+    height: 30px;
+    width: 50%;
+    background-color: #ddd;
+  }
+  
+  #myBar5 {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.5em;
+    width: 1%;
+    height: 30px;
+    background: -webkit-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -moz-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: -o-linear-gradient(#d9e2e9 30%, #7fc7ee);
+    background: linear-gradient(#d9e2e9 30%, #7fc7ee);
+  }

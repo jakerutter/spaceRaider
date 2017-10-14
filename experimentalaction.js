@@ -5,9 +5,9 @@ function menuConfirm(){
 
 //click sound function
 function clickSound(){
-document.addEventListener("click", function(){
+    document.addEventListener("click", function(){
     document.getElementById("clickSound").play();
-});
+    });
 }
 
 //canvas that is drawn on body.onload and sits in the background during menu selections
@@ -30,29 +30,29 @@ function drawing() {
         if (rotateBy > 10){
             clearInterval(id);
         } else {
-	for(var i=0; i<=hmTimes; i++) {
-	  var randomX = Math.floor((Math.random()*xMax)+1);
-	  var randomY = Math.floor((Math.random()*yMax)+1);
-	  var randomSize = Math.floor((Math.random()*2)+1);
-	  var randomOpacityOne = Math.floor((Math.random()*9)+1);
-	  var randomOpacityTwo = Math.floor((Math.random()*9)+1);
-	  var randomHue = Math.floor((Math.random()*360)+1);
-    if(randomSize>1) {
-      ctx.shadowBlur = Math.floor((Math.random()*15)+5);
-      ctx.shadowColor = "white";
-	  }
-    ctx.fillStyle = "hsla("+randomHue+", 30%, 80%, ."+randomOpacityOne+randomOpacityTwo+")";
-	  ctx.fillRect(randomX, randomY, randomSize, randomSize);
+	        for(var i=0; i<=hmTimes; i++) {
+	            var randomX = Math.floor((Math.random()*xMax)+1);
+                var randomY = Math.floor((Math.random()*yMax)+1);
+                var randomSize = Math.floor((Math.random()*2)+1);
+                var randomOpacityOne = Math.floor((Math.random()*9)+1);
+                var randomOpacityTwo = Math.floor((Math.random()*9)+1);
+                var randomHue = Math.floor((Math.random()*360)+1);
+                if(randomSize>1) {
+                ctx.shadowBlur = Math.floor((Math.random()*15)+5);
+                ctx.shadowColor = "white";
+                }
+                ctx.fillStyle = "hsla("+randomHue+", 30%, 80%, ."+randomOpacityOne+randomOpacityTwo+")";
+                ctx.fillRect(randomX, randomY, randomSize, randomSize);
+            }
+                ctx.save();
+                ctx.restore();
+                ctx.translate(c.width/50, c.height/50);
+                ctx.rotate(rotateBy);
+                rotateBy += .01;
+        }
     }
-    ctx.save();
-    ctx.restore();
-    ctx.translate(c.width/50, c.height/50);
-    ctx.rotate(rotateBy);
-    rotateBy += .01;
-    }
-}
 //remove this function call if you decide to turn the timer back on
-   frame();    
+    frame();    
 }
 
 // //First menu that appears when start button selected
@@ -70,7 +70,7 @@ function welcomeModal() {
             size = $("input[name='gameSize']:checked").val();
         }
         else{
-            setTimeout(loop, 1000);   
+            setTimeout(loop, 500);   
         }
       currentSize.innerHTML = size;
     }
@@ -103,6 +103,7 @@ function menuModal() {
 
 }
 
+//check the troops selection and checkboxes to verify that the correct selections have been made
 function checkTroopSelection() {
     troops = $('input:checkbox:checked.checkboxes').map(function () {
         return this.value;
@@ -118,24 +119,177 @@ function checkTroopSelection() {
         menuModal();
     }
 }
+
 function hideMenuModal() {
     if (troopSelection.innerHTML != ""){
     document.getElementById('menuModal').classList.add('hidden');
     document.getElementById('menuModal').classList.add('behind');
     document.getElementById('simplemodal-overlay').classList.add('behind');
-    document.getElementById('simplemodal-container').classList.add('behind');   
+    document.getElementById('simplemodal-overlay').classList.add('behind');
+    document.getElementById('simplemodal-container').classList.add('hidden');
+    document.getElementById('simplemodal-overlay').classList.add('hidden');   
     menuConfirm();
-    var gameSize = currentSize.innerHTML;
-    createGame(gameSize);
+    move();
     } else {
         menuModal();
     }
 }
 
-function createGame(gameSize) {
+//Triggers the loading bars
+function move() {
+    document.getElementById("myBar1").classList.remove("hidden");
+    document.getElementById("myProgress1").classList.remove("hidden");
+    load1();
+    setTimeout(load2, 2500);
+    setTimeout(load3, 6000);
+    setTimeout(load4, 9000);
+    setTimeout(load5, 12000);
+  }
 
-}
+//first loading bar
+  function load1(){
+    var elem = document.getElementById("myBar1");  
+    elem.innerHTML = "initating the Big Bang...";
+    var width = 1;
+    var id = setInterval(frame, 20);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width++; 
+        elem.style.width = width + '%'; 
+      }
+    }
+    }
 
+//second loading bar
+  function load2(){
+    document.getElementById("myBar1").classList.add("hidden");
+    document.getElementById("myBar1").classList.remove("center");
+    document.getElementById("myProgress1").classList.add("hidden");
+    document.getElementById("myProgress1").classList.remove("center");
+    document.getElementById("myProgress2").classList.remove("hidden");
+    var elem = document.getElementById("myBar2");
+    elem.classList.remove("hidden");
+    elem.classList.add("center");
+    elem.innerHTML = "...generating the cosmos...";
+    var width = 1;
+    var id = setInterval(frame, 30);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width++; 
+        elem.style.width = width + '%'; 
+      }
+    }
+    }
+
+  //third loading bar
+function load3(){
+    document.getElementById("myBar2").classList.add("hidden");
+    document.getElementById("myBar2").classList.remove("center");
+    document.getElementById("myProgress2").classList.add("hidden");
+    document.getElementById("myProgress2").classList.remove("center");
+    document.getElementById("myProgress3").classList.remove("hidden");
+    var elem = document.getElementById("myBar3");
+    elem.classList.remove("hidden");
+    elem.classList.add("center");
+    elem.innerHTML = "...calculating galactic distances...";
+    var width = 1;
+    var id = setInterval(frame, 25);
+    function frame() {
+        if (width >= 100) {
+        clearInterval(id);
+        } else {
+        width++; 
+        elem.style.width = width + '%'; 
+      }
+    }
+  }
+
+//fourth loading bar
+function load4(){
+    document.getElementById("myBar3").classList.add("hidden");
+    document.getElementById("myBar3").classList.remove("center");
+    document.getElementById("myProgress3").classList.add("hidden");
+    document.getElementById("myProgress3").classList.remove("center");
+    document.getElementById("myProgress4").classList.remove("hidden");
+    var elem = document.getElementById("myBar4");
+    elem.classList.remove("hidden");
+    elem.classList.add("center");
+    elem.innerHTML = "...booting SkyNet...";
+    var width = 1;
+    var id = setInterval(frame, 25);
+    function frame() {
+        if (width >= 100) {
+        clearInterval(id);
+        } else {
+        width++; 
+        elem.style.width = width + '%'; 
+      }
+    }
+  }
+
+//fifth loading bar
+function load5(){
+    document.getElementById("myBar4").classList.add("hidden");
+    document.getElementById("myBar4").classList.remove("center");
+    document.getElementById("myProgress4").classList.add("hidden");
+    document.getElementById("myProgress4").classList.remove("center");
+    document.getElementById("myProgress5").classList.remove("hidden");
+    var elem = document.getElementById("myBar5");
+    elem.classList.remove("hidden");
+    elem.classList.add("center");
+    elem.innerHTML = "...beaming up Scotty...";
+    var width = 1;
+    var id = setInterval(frame, 25);
+    function frame() {
+        if (width >= 100) {
+        clearInterval(id);
+        } else {
+        width++; 
+        elem.style.width = width + '%'; 
+      }
+    }
+  }
+
+//Define Units
+function Unit(id,playerID,name,image,sound,moves,travelDistance,targetType,viewDistance,fixedTargetOrPatrol,currentLocation, activated){
+    this.id = id;
+    this.playerID = playerID;
+    this.name = name;
+    this.image = image;
+    this.sound = sound;
+    this.moves = moveType(unitName);   //thinking I'll have a function that registers all unit moves and returns them when called with unitName as parameter.
+    this.travelDistance = travelDistance;
+    this.targetType = targetType;  //when you are using this unit does your click register at the system or planetary level.
+    this.viewDistance = viewDistance;
+    this.fixedTargetOrPatrol = fixedTargetOrPatrol;
+    this.currentLocation = currentLocation;
+    this.activated = activated;
+
+  };
+
+  //Define solar systems
+function System(id,name,location,numberOfPlanets,occupied,nameOfOccupants,isSelected,isTargeted,isSearched,isDestroyed, childrenPlanets){
+    this.id = id;
+    this.name = name;
+    this.location = location;
+    this.numberOfPlanets = planetList.length;
+    this.occupied = occupied;   //bool
+    this.nameOfOccupants = nameOfOccupants;
+    this.isSelected = isSelected;  
+    this.isTargeted = isTargeted;
+    this.isSearched = isSearched;
+    this.isDestroyed = isDestroyed;
+    this.childrenPlanets = createPlanets(childrenPlanets);
+
+  };
+
+
+
+//Old Maze Functions and Variables Below this comment
 //Global Variables
 var upAndDown = "";  
 var wallNodes = [];
